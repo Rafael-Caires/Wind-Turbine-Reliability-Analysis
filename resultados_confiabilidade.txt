@@ -1,0 +1,12 @@
+--- Métricas de Confiabilidade Parque Eólico A ---
+ id_ativo        MTBF       MTTR  Disponibilidade  Num_Falhas
+        0 4367.833333 252.166667         0.945418           2
+
+--- Métricas de Confiabilidade Parque Eólico B ---
+ id_ativo        MTBF       MTTR  Disponibilidade  Num_Falhas
+       13 8384.833333 744.166667         0.918483           1
+
+--- Métricas de Confiabilidade Parque Eólico C ---
+ id_ativo        MTBF      MTTR  Disponibilidade  Num_Falhas
+       53 4462.916667 97.083333          0.97871           2
+
