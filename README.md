@@ -15,16 +15,18 @@ O repositório está organizado da seguinte forma:
 ├── WIND FARM C/
 │   └── (Arquivos de dados do Parque C)
 │
-├── analise_confiabilidade.py   # Script principal que realiza os cálculos
-├── carregar_dados.py           # Script para carregar e pré-processar os dados
-├── gerar_visualizacoes.py      # Script que cria os gráficos e plots
+├── ArquivoFinalConfiabilidadesPorParque.py # Script principal que realiza os cálculos e gera os arquivos CSV de resultados
+├── confiabilidade_por_asset_FarmA.csv # Saída com os resultados numéricos da análise do Parque A
+├── confiabilidade_por_asset_FarmB.csv # Saída com os resultados numéricos da análise do Parque B
+├── confiabilidade_por_asset_FarmC.csv # Saída com os resultados numéricos da análise do Parque C
 │
-├── resultados_confiabilidade.txt # Saída com os resultados numéricos da análise
-├── saida_inspecao_dados.txt    # Arquivo de log ou inspeção inicial dos dados
+├── histogramasMtbfMttf.py # Script para gerar histogramas para cada Parque
+├── histogramasParqueA.png # Histogramas do Parque A 
+├── histogramasParqueB.png # Histogramas do Parque B
+├── histogramasParqueC.png # Histogramas do Parque C
 │
-├── availability_barplot.png    # Gráfico com a disponibilidade por parque
-├── mttf_barplot.png            # Gráfico com o MTTF por parque
-└── mttr_barplot.png            # Gráfico com o MTTR por parque
+├── ditribuicaoDisponibilidade.py # Script para gerar o grafico de caixa das disponibilidades
+└── DistribuicaoDisponibilidade.png # Gráfico de caixa das Disponibilidades
 ```
 
 ## ❗ Dados do Projeto
@@ -33,28 +35,35 @@ O repositório está organizado da seguinte forma:
 
 Para executar os scripts, você precisa fazer o download dos dados separadamente através do link abaixo e colocar os arquivos nas suas respectivas pastas (`WIND FARM A`, `WIND FARM B`, `WIND FARM C`).
 
-➡️ **Faça o download dos dados aqui:https://drive.google.com/drive/folders/1U3_ulgmNl2MxuH0QgOcmdNNVRODkbgeN?usp=sharing
+➡️ **Faça o download dos dados aqui:https://zenodo.org/records/14958989
 
 ## 🚀 Como Executar
 
 1.  **Clone o repositório:**
 
 2.  **Baixe e organize os dados:**
-    * Faça o download dos arquivos de dados a partir do link do Google Drive fornecido acima.
+    * Faça o download dos arquivos de dados a partir do link fornecido acima.
     * Descompacte e mova os arquivos para as pastas correspondentes (`WIND FARM A/`, `WIND FARM B/`, `WIND FARM C/`).
+    * Confira se nos arquivos event_info.csv de cada Parque a coluna com o ID do *asset* é nomedada *asset_id*
+    * Renomeie o arquivo .csv de cada dataset acrescentando o ID do *asset* correnpondente antes do número do evento como abaixo:
+    ![alt text](image.png)
 
 3.  **Instale as dependências:**
 
 4.  **Execute a análise:**
-    Execute os scripts na ordem apropriada para carregar os dados, processá-los e gerar as visualizações.
+    Execute os scripts na ordem apropriada para carregar os dados, processá-los e gerar as visualizações(execute uma vez para fada fazendo mudando os caminhos do arquivos a serem lidos).
     ```bash
-    python carregar_dados.py
-    python analise_confiabilidade.py
-    python gerar_visualizacoes.py
+    python ArquivoFinalConfiabilidadesPorParque.py
+    python histogramasMtbfMttf.py
     ```
+    Execute o código abaixo para gerar o Gráfico em caixa comparando os três resultados de Disponibilidade.
+    ```bash
+    python ditribuicaoDisponibilidade.py
+    ```
+
 
 ## 📊 Resultados
 
-Os resultados numéricos da análise de confiabilidade são salvos no arquivo `resultados_confiabilidade.txt`.
+Os resultados numéricos da análise de confiabilidade são salvos nos arquivos `.csv` no diretório principal do projeto.
 
 As visualizações, como os gráficos de barras para Disponibilidade, MTTF e MTTR, são salvas como arquivos `.png` no diretório principal do projeto.
