@@ -35,7 +35,7 @@ O repositório está organizado da seguinte forma:
 
 Para executar os scripts, você precisa fazer o download dos dados separadamente através do link abaixo e colocar os arquivos nas suas respectivas pastas (`WIND FARM A`, `WIND FARM B`, `WIND FARM C`).
 
-➡️ **Faça o download dos dados aqui:https://zenodo.org/records/14958989
+➡️ **Faça o download dos dados aqui:** https://zenodo.org/records/14958989
 
 ## 🚀 Como Executar
 
@@ -46,12 +46,13 @@ Para executar os scripts, você precisa fazer o download dos dados separadamente
     * Descompacte e mova os arquivos para as pastas correspondentes (`WIND FARM A/`, `WIND FARM B/`, `WIND FARM C/`).
     * Confira se nos arquivos event_info.csv de cada Parque a coluna com o ID do *asset* é nomedada *asset_id*
     * Renomeie o arquivo .csv de cada dataset acrescentando o ID do *asset* correnpondente antes do número do evento como abaixo:
+
     ![alt text](image.png)
 
 3.  **Instale as dependências:**
 
 4.  **Execute a análise:**
-    Execute os scripts na ordem apropriada para carregar os dados, processá-los e gerar as visualizações(execute uma vez para fada fazendo mudando os caminhos do arquivos a serem lidos).
+    Execute os scripts na ordem apropriada para carregar os dados, processá-los e gerar as visualizações (execute uma vez para cada Parque, mudando os caminhos dos arquivos a serem lidos).
     ```bash
     python ArquivoFinalConfiabilidadesPorParque.py
     python histogramasMtbfMttf.py
